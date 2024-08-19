@@ -1,0 +1,33 @@
+{
+  "name": "RunLauncher",
+  "version": "0.0.3-1",
+  "description": "custom offline minecraft launcher",
+  "repostory": {
+    "type": "git",
+    "url": "git+https://github.com/Runteryaa/RunLauncher.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env APP_DEV=true electron .",
+    "build": "electron-builder"
+  },
+  "author": "Runterya",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@xmcl/installer": "^5.4.0",
+    "discord-rpc": "^4.0.1",
+    "ejs": "^3.1.10",
+    "ejs-electron": "^3.0.0",
+    "electron-first-run": "^3.0.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-store": "^10.0.0",
+    "electron-updater": "^6.2.1",
+    "fs-extra": "^11.2.0",
+    "minecraft-launcher-core": "^3.18.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^31.4.0",
+    "electron-builder": "^24.13.3"
+  }
+}

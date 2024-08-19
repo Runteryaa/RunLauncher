@@ -1,0 +1,38 @@
+appId: 'com.runterya.RunLauncher'
+productName: 'RunLauncher'
+artifactName: '${productName}${version}-setup.${ext}'
+
+copyright: 'Copyright © 2024 Runterya'
+
+asar: true
+compression: 'maximum'
+
+files:
+  - '!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.hintrc}'
+
+extraResources:
+  - 'config.json'
+
+
+win: 
+  target: 
+    - target: 'nsis'
+      arch: 'x64'
+
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: "always"
+  createStartMenuShortcut: true
+
+directories:
+  buildResources: 'build'
+  output: 'dist'
+
+publish:
+  provider: github
+  owner: Runterya
+  repo: RunLauncher
