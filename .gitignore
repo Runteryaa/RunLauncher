@@ -48,6 +48,5 @@ signCertificate.pfx
 dist/
 node_modules
 .hintrc
-config.json
 package-lock.json
 .vscode/settings.json
