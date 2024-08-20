@@ -20,6 +20,7 @@
   if (isDev) {
     config = fs.readJsonSync(path.join(__dirname, 'config.json'));
     console.log("DEV")
+    console.log(config)
   } else {
     var datasPath = app.getPath('userData')
     var filePath = path.join(datasPath, "config.json")
@@ -45,7 +46,9 @@
       }    
     })
     win.loadFile('app/app.html');
-    if (isDev) {win.webContents.openDevTools()}
+    if (isDev) {
+      win.webContents.openDevTools()
+    }
     // win.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
     // win.setAlwaysOnTop(true, 'screen-saver', 1);
   }

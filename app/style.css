@@ -21,11 +21,24 @@ hr{
   cursor: pointer;
 }
 
+[text] {
+  cursor: text;
+}
+
+rana {
+  color: red
+}
+
 .loading {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
+}
+
+.loading .tips {
+  color: rebeccapurple;
 }
 
 .loading-dots {
@@ -115,6 +128,21 @@ hr{
   font-weight: bold;
 }
 
+#accountpage {
+  background-color:chocolate;
+  height: 100vh;
+}
+
+#launchpage {
+  background-color:aqua;
+  height: 100vh;
+}
+
+#newspage {
+  background-color:crimson;
+  height: 100vh;
+}
+
 .settings {
   background-color: white;
   bottom: 0;
@@ -128,6 +156,5 @@ hr{
   background-color: purple;
   width: 83vw;
   overflow-y: auto;
-  height: calc(100vh - 2vh);
-  padding: 1vh;
+  height: 100vh;
 }
