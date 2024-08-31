@@ -4,12 +4,9 @@
   const electronReload = require('electron-reload')
   const fs = require('fs-extra')
 
-  var isDev = process.env.APP_DEV ? (process.env.APP_DEV.trim() == 'true') : false;
-
-  if (isDev) {
-      require('electron-reload')(__dirname);
-  }
   const { version } = require('./package.json');
+  var isDev = process.env.APP_DEV ? (process.env.APP_DEV.trim() == 'true') : false;
+  if (isDev) {require('electron-reload')(__dirname);}
 
   var data = {
     "accountname": "",
@@ -26,7 +23,7 @@
     var filePath = path.join(datasPath, "config.json")
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2))
     var fileContent = fs.readFileSync(filePath, 'utf8');
-    const config = JSON.parse(fileContent)
+    config = JSON.parse(fileContent)
     console.log(config)
   }
 
@@ -38,6 +35,7 @@
       frame: true,
       title: "RunLauncher",
       backgroundColor: '#161616',
+      contextIsolation: true,
       icon: 'icon.png',
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
@@ -53,6 +51,22 @@
     // win.setAlwaysOnTop(true, 'screen-saver', 1);
   }
   ipcMain.handle('get-config', () => config);
+  ipcMain.handle('save-config', async (event, newConfig) => {
+    try {
+      config = { ...config, ...newConfig };
+      if (!isDev) {
+        const datasPath = app.getPath('userData');
+        const filePath = path.join(datasPath, 'config.json');
+        await fs.writeJson(filePath, config, { spaces: 2 });
+      }
+      return config;
+    } catch (error) {
+      console.error('Error saving config:', error);
+      throw error;
+    }
+  });
+  
+  
   Menu.setApplicationMenu(null);
 
 

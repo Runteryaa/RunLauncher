@@ -1,16 +1,16 @@
 {
-    "accountname": "Runterya",
+    "accountname": "Test",
     "language": "en",
     "newbbie": true,
     "eastereggs": true,
     "instances": {
         "Release": {
-            "1.19.1": "C:\\Users\\Runterya\\AppData\\Roaming\\.minecraft\\versions\\1.19.1",
-            "1.20.1": "C:\\Users\\Runterya\\AppData\\Roaming\\.minecraft\\versions\\1.19.1"
+            "1.19.1": "C:\\",
+            "1.20.1": "C:\\"
         },
         "Forge": {
-            "1.19.1": "C:\\Users\\Runterya\\AppData\\Roaming\\.minecraft\\versions\\1.19.1",
-            "1.20.1": "C:\\Users\\Runterya\\AppData\\Roaming\\.minecraft\\versions\\1.19.1"
+            "1.19.1": "C:\\",
+            "1.20.1": "C:\\"
         }
     }
 }

@@ -31,8 +31,3 @@ nsis:
 directories:
   buildResources: 'build'
   output: 'dist'
-
-publish:
-  provider: github
-  owner: Runterya
-  repo: RunLauncher
